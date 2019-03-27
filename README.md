@@ -1,4 +1,4 @@
-# BDD testing with Selenium and Cucumber #
+# BDD with Selenium and Cucumber #
 This project contains the source code used to test SFDC out of the box features.  The idea 
 is to have business analysts or product owner's write a BDD feature file.  Then, the development team will take the feature file and write functional tests with Selenium and JUnit 4.
 
