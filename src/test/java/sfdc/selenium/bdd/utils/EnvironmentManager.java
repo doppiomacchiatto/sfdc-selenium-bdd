@@ -6,8 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class EnvironmentManager {
+	private static String OS = System.getProperty("os.name").toLowerCase();
 	
 	private static String OS_X_CHROMEDRIVER="/usr/local/bin/chromedriver";
+	
+	private static String WIN_CHROMEDRIVER= "C:\\Drivers\\chromedriver.exe" ;
 	
 	public static WebDriver driver;
 	
@@ -17,9 +20,15 @@ public class EnvironmentManager {
 
     public static void initWebDriver() {
     	//TODO add logic to determine which OS
-        System.setProperty("webdriver.chrome.driver", OS_X_CHROMEDRIVER);
+    	
+    	if(OS.indexOf("mac") >= 0) {
+    		System.setProperty("webdriver.chrome.driver", OS_X_CHROMEDRIVER);
+    	}
+    	if(OS.indexOf("win") >= 0) {
+    		System.setProperty("webdriver.chrome.driver",WIN_CHROMEDRIVER);
+    	}
+    	
         if(driver == null) {
-        	//Driver has been set (Singleton)
         	driver = new ChromeDriver();
         	RunEnvironment.setWebDriver(driver);
         }
