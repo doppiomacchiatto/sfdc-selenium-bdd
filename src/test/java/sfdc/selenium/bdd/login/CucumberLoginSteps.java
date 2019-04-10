@@ -89,7 +89,8 @@ public class CucumberLoginSteps {
 			userProfile.click();
 		}
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Log Out")));
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Log Out")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='profile-link-label logout uiOutputURL']")));
 		WebElement logout = webDriver.findElement(By.linkText("Log Out"));
 		assertNotNull(logout);
 		webDriver.findElement(By.xpath("//a[@class='profile-link-label logout uiOutputURL']")).click();
@@ -108,7 +109,6 @@ public class CucumberLoginSteps {
 		
 		EnvironmentManager.shutDownDriver();
 	
-		
 	}
 	/**
 	 * Helper method that check if an HTML element is present.
