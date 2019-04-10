@@ -1,4 +1,4 @@
-#Author: jsantisi@deloitte.com
+#Author: juan@santisi.io
 #Keywords Summary : SFDC Login Action
 #Feature: List of scenarios.
 #Scenario: Business rule through list of steps with arguments.
