@@ -12,8 +12,6 @@ public class EnvironmentManager {
 	
 	private static String WIN_CHROMEDRIVER= "C:\\Drivers\\chromedriver.exe" ;
 	
-	public static WebDriver driver;
-	
 	private EnvironmentManager() {
 		
 	}
@@ -23,15 +21,22 @@ public class EnvironmentManager {
     	
     	if(OS.indexOf("mac") >= 0) {
     		System.setProperty("webdriver.chrome.driver", OS_X_CHROMEDRIVER);
+    		setDriver();
+
     	}
     	if(OS.indexOf("win") >= 0) {
     		System.setProperty("webdriver.chrome.driver",WIN_CHROMEDRIVER);
+    		setDriver();
     	}
     	
-        if(driver == null) {
-        	driver = new ChromeDriver();
-        	RunEnvironment.setWebDriver(driver);
-        }
+
+    }
+    private static WebDriver setDriver() {
+    	WebDriver driver = new ChromeDriver();
+        RunEnvironment.setWebDriver(driver);
+        
+    	return driver;
+    	
     }
     public static void initPropsFile() {
     	ApplicationUtil appUtil = new ApplicationUtil();
