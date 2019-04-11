@@ -8,3 +8,5 @@
 build
 bin
 **/application.properties
+
+src/test/java/sfdc/selenium/bdd/\.DS_Store
