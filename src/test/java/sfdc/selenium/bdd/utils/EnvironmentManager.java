@@ -17,21 +17,20 @@ public class EnvironmentManager {
 	}
 
     public static void initWebDriver() {
-    	//TODO add logic to determine which OS
     	
     	if(OS.indexOf("mac") >= 0) {
     		System.setProperty("webdriver.chrome.driver", OS_X_CHROMEDRIVER);
-    		setDriver();
+    		setChromeDriver();
 
     	}
     	if(OS.indexOf("win") >= 0) {
     		System.setProperty("webdriver.chrome.driver",WIN_CHROMEDRIVER);
-    		setDriver();
+    		setChromeDriver();
     	}
     	
 
     }
-    private static WebDriver setDriver() {
+    private static WebDriver setChromeDriver() {
     	WebDriver driver = new ChromeDriver();
         RunEnvironment.setWebDriver(driver);
         
